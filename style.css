@@ -1,0 +1,375 @@
+/* ------------------------------
+   RESET & BASE
+------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0a0a0a;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ------------------------------
+   NAVBAR
+------------------------------ */
+.navbar {
+  width: 100%;
+  padding: 1.2rem 6%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.logo span {
+  color: #f9d342;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav ul li a {
+  font-weight: 500;
+  color: #aaa;
+  transition: color 0.3s;
+}
+nav ul li a:hover,
+nav ul li a.active {
+  color: #fff;
+}
+
+.enroll-btn {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  background: #f9d342;
+  color: #000;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.enroll-btn:hover {
+  background: #ffd84f;
+}
+
+/* ------------------------------
+   HERO SECTION
+------------------------------ */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 85%;
+}
+
+.left-text {
+  width: 40%;
+  line-height: 1.6;
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.members {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.members img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+}
+
+.members span {
+  font-size: 0.9rem;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.right-text {
+  text-align: right;
+}
+
+.right-text h1 {
+  font-size: 7rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #fff;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  animation: slideUp 1.3s ease forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.2rem;
+}
+
+.btn-yellow {
+  background: #f9d342;
+  color: #000;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 40px;
+  transition: all 0.3s;
+}
+.btn-yellow:hover {
+  background: #fff173;
+}
+
+.btn-outline {
+  border: 2px solid #f9d342;
+  color: #f9d342;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 40px;
+  transition: all 0.3s;
+}
+.btn-outline:hover {
+  background: #f9d342;
+  color: #000;
+}
+
+.scroll-text {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #aaa;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  animation: fadeUp 3s infinite;
+}
+@keyframes fadeUp {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-5px); }
+}
+
+/* ------------------------------
+   ABOUT SECTION
+------------------------------ */
+.about {
+  padding: 7rem 0;
+  text-align: center;
+  background-color: #0f0f0f;
+}
+
+.about h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.about p {
+  color: #bbb;
+  width: 70%;
+  margin: 0 auto 3rem auto;
+  line-height: 1.6;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.about-card {
+  background: #151515;
+  padding-bottom: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.about-card:hover {
+  transform: translateY(-6px);
+}
+.about-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.about-card h3 {
+  margin-top: 1rem;
+  color: #f9d342;
+}
+.about-card p {
+  width: 90%;
+  margin: 0.5rem auto;
+  color: #aaa;
+}
+
+/* ------------------------------
+   PROGRAMS SECTION
+------------------------------ */
+.programs {
+  padding: 6rem 0;
+  background-color: #0b0b0b;
+  text-align: center;
+}
+
+.programs h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 85%;
+  margin: auto;
+}
+
+.program {
+  background: #151515;
+  padding: 1rem;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+.program:hover {
+  transform: translateY(-6px);
+}
+.program img {
+  width: 100%;
+  border-radius: 10px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+.program h3 {
+  color: #f9d342;
+  margin-bottom: 0.5rem;
+}
+
+/* ------------------------------
+   COACHES
+------------------------------ */
+.coaches {
+  padding: 7rem 0;
+  background-color: #0f0f0f;
+  text-align: center;
+}
+
+.coach-grid {
+  width: 85%;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.coach-card {
+  background: #151515;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.coach-card:hover {
+  transform: translateY(-5px);
+}
+.coach-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+.coach-card h3 {
+  margin-top: 0.8rem;
+  color: #f9d342;
+}
+.coach-card p {
+  color: #bbb;
+  margin-bottom: 1rem;
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+footer {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #111;
+}
+
+.footer-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+footer p {
+  position: relative;
+  z-index: 2;
+  color: #ccc;
+  font-size: 0.9rem;
+}
